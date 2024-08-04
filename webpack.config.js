@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const path = require("path")
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -30,10 +30,19 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          "style-loader", // Injects styles into the DOM
+          "css-loader",   // Resolves CSS imports
+          "sass-loader"   // Compiles Sass to CSS
+        ],
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         exclude: /node_modules/,
         use: ["file-loader"],
       },
     ],
   },
-};
+}
