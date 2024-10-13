@@ -1,0 +1,50 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "john_doe",
+            "email": "john@example.com",
+            "password": "password123"
+        },
+        {
+            "id": 2,
+            "username": "jane_doe",
+            "email": "jane@example.com",
+            "password": "password456"
+        }
+    ],
+    "recipes": [
+        {
+            "id": 1,
+            "title": "Spaghetti Bolognese",
+            "ingredients": [
+                "spaghetti",
+                "minced meat",
+                "tomato sauce"
+            ],
+            "instructions": "Cook spaghetti, fry minced meat, mix with sauce."
+        },
+        {
+            "id": 2,
+            "title": "Chicken Curry",
+            "ingredients": [
+                "chicken",
+                "curry powder",
+                "coconut milk"
+            ],
+            "instructions": "Fry chicken, add curry powder, pour in coconut milk."
+        }
+    ],
+    "ingredients": [
+        {
+            "id": 1,
+            "name": "carrot",
+            "category": "vegetables"
+        },
+        {
+            "id": 2,
+            "name": "cow milk",
+            "category": "dairy and alternatives"
+        }
+    ]
+}

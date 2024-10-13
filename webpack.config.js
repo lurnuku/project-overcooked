@@ -1,12 +1,13 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: ["./src/global.scss", "./src/index.tsx"],
   mode: "development",
   output: {
     filename: "bundle.[fullhash].js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -33,9 +34,9 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
-          "style-loader", // Injects styles into the DOM
-          "css-loader",   // Resolves CSS imports
-          "sass-loader"   // Compiles Sass to CSS
+          "style-loader",
+          "css-loader",
+          "sass-loader"
         ],
       },
       {
@@ -44,5 +45,13 @@ module.exports = {
         use: ["file-loader"],
       },
     ],
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: true,
+    port: 8080,
+    historyApiFallback: true,
   },
 }

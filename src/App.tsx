@@ -1,27 +1,33 @@
 import React from 'react'
 
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
-import './App.scss'
+import Homepage from './components/Homepage/Homepage'
+import CreateRecipe from './components/CreateRecipe/CreateRecipe'
+import MyRecipes from './components/MyRecipes/MyRecipes'
 
-import RecipeBoard from './components/recipeBoard/RecipeBoard'
-import TopBar from './components/topBar/TopBar'
-import Ingredients from './components/ingredients/Ingredients'
-// import Login from './components/login/Login'
+const App: React.FC = () => {
 
-
-const App: React.FC = () => (
-  <DndProvider backend={HTML5Backend}>
-    <div className='app--container'>
-      <TopBar />
-      <div className='mainboard'>
-        {/* <Login /> */}
-        <RecipeBoard />
-        <Ingredients />
-      </div>
-    </div>
-  </DndProvider>
-)
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/'>
+          <Homepage />
+        </Route>
+        <Route exact path='/create'>
+          <CreateRecipe />
+        </Route>
+        <Route exact path='/my-recipes'>
+          <MyRecipes />
+        </Route>
+        <Route exact path='/page-not-found'>
+        </Route>
+        <Route exact path='/error'>
+        </Route>
+        <Redirect to='/page-not-found' />
+      </Switch>
+    </BrowserRouter>
+  )
+}
 
 export default App
