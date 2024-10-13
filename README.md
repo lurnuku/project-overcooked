@@ -11,7 +11,11 @@ Project Overcooked is a recipe management application that allows users to creat
 ## Development
 
 ### Running the JSON Server
-To run the JSON server for your mock database, use the following command:
+To run the JSON server for the mock database, use the following command:
 ```bash
 npm run json-server
+```
+To start the app:
+```bash
+npx webpack serve
 ```
