@@ -3,7 +3,7 @@ import React from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import Homepage from './components/Homepage/Homepage'
-import CreateRecipe from './components/CreateRecipe/CreateRecipe'
+import CreateRecipe from './components/CreateRecipe/Overview'
 import MyRecipes from './components/MyRecipes/MyRecipes'
 
 const App: React.FC = () => {
