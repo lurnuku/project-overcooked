@@ -12,6 +12,7 @@ $black: #3E3E42;
 body {
     margin-top: 20px;
     background-color: $green;
+    color: $black;
 }
 
 .clickable {
@@ -52,4 +53,57 @@ body {
     background-color: $lime;
     border-radius: 16px;
     padding: 12px
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.form__field {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $black;
+    outline: 0;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown~.form__label {
+        cursor: text;
+        top: 20px;
+    }
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+}
+
+.form__field:focus {
+    ~.form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+    }
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-image: $black;
+}
+
+.form__field {
+
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
 }

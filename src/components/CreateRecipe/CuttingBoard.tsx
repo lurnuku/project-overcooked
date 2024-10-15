@@ -1,9 +1,17 @@
 import React from 'react'
 
+import Input from '../Input'
+
+
 const CuttingBoard: React.FC = () => {
   return (
     <div className='board w-70'>
-        Cutting BoardCutting BoardCutting BoardCutting BoardCutting BoardCutting BoardCutting BoardCutting BoardCutting BoardCutting BoardCutting Board
+      <Input
+        placeholder='my-placeholder'
+        type='text'
+        name='name'
+        label='Name'
+      />
     </div>
   )
 }
